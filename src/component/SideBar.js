@@ -50,7 +50,7 @@ const SideBar = (props) => {
       </div>
       <div className='sidebar-iteam' onClick={clickPlaylist}>
         <BsMusicPlayerFill size={25} className="iteam-icon"/>
-        PlayList
+        My playList
       </div>
       <div className='sidebar-iteam' onClick={clickProfile}>
         <BsFillPersonFill size={25} className="iteam-icon"/>
