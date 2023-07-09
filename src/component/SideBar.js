@@ -34,7 +34,7 @@ const SideBar = (props) => {
     navigate("/")
   }
   const clickPlaylist=()=>{
-
+    navigate("/playlist")
   }
   return (
     <div>

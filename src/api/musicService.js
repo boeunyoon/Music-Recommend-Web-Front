@@ -49,3 +49,16 @@ export const searchMusicKeyword=(keyword)=>{
         },
     })
 }
+//플레이리스트 추가하기
+export const AddPlaylist=(keyword)=>{
+    console.log(keyword);
+    return axios({
+        method:'POST',
+        url: `${process.env.hostUrl||'http://localhost:8080'}/addplaylist`,
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization':'Bearer '+getToken()
+        },
+        data: JSON.stringify(keyword)
+    })
+}

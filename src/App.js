@@ -9,6 +9,7 @@ import Top100 from './page/Top100';
 import MainLayout from './layout/MainLayout';
 import SelectGenrePage from './page/SelectGenrePage';
 import SearchResultPage from './page/SearchResultPage';
+import UserPlaylist from './page/UserPlaylist';
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
           <Route path='/top100' element={<Top100/>}/>
           <Route path='/select' element={<SelectGenrePage/>}/>
           <Route path='/search' element={<SearchResultPage/>}/>
+          <Route path='/playlist' element={<UserPlaylist/>}/>
         </Routes>
       </div>
     </BrowserRouter>

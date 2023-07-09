@@ -12,3 +12,9 @@
 .plus-icon{
     font-size: 25px;
 }
+.plus-icon.clicked {
+    color: #3fe06a;
+}
+.heart-icon{
+    font-size: 25px;
+}
