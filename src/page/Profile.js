@@ -5,6 +5,7 @@ const Profile = () => {
   return (
     <MainLayout>
         <h1 className='title-profile'>Profile</h1>
+        <hr/>
     </MainLayout>
   )
 }

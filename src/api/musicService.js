@@ -62,3 +62,23 @@ export const AddPlaylist=(keyword)=>{
         data: JSON.stringify(keyword)
     })
 }
+//음악 추천하기
+export const RecommendMusicByPlayList =()=>{
+    return axios({
+        method:'GET',
+        url: `${process.env.hostUrl||'http://localhost:8080'}/recommend`,
+        headers:{
+            'Authorization':'Bearer '+getToken()
+        },
+    })
+}
+//플레이리스트 추천하기
+export const RecommendPlaylistByPlayList =()=>{
+    return axios({
+        method:'GET',
+        url: `${process.env.hostUrl||'http://localhost:8080'}/recommend/playlist`,
+        headers:{
+            'Authorization':'Bearer '+getToken()
+        },
+    })
+}

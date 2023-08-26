@@ -31,7 +31,6 @@ export const signUp=(authRequest)=>{
         url: `${process.env.hostUrl||'http://localhost:8080'}/auth/signup`,
         data:authRequest
     })
-
 }
 
 const calculateRemainingTime = (expirationTime) => {

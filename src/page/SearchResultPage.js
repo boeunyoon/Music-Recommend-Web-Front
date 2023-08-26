@@ -19,13 +19,9 @@ const SearchResultPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchInResult, setSearchInResult] = useState(searchResults);
   const [playlist, setPlaylist] = useState([]);
-  // console.log("searchResult",searchInResult)
   
   useEffect(() => {
     fetchPlaylist();
-    console.log("playlist111111111",playlist)
-    console.log("11111111", searchInResult)
-    // console.log
   }, []);
 
   useEffect(() => {
@@ -35,8 +31,6 @@ const SearchResultPage = () => {
         clicked: playlist.some(music => music.songId == result.id),
       }))
     );
-    console.log("22222222", playlist)
-    console.log("QQQQQQQQQQQ", searchInResult)
   }, [searchResults, playlist]);
 
   // 플레이리스트 받아오기
@@ -50,7 +44,6 @@ const SearchResultPage = () => {
             clicked: response.data.some(music => music.songId == result.id),
           }))
         );
-        console.log("11111111", searchInResult)
       })
       .catch(error => {
         console.error('Error fetching playlist:', error);
@@ -140,10 +133,6 @@ const SearchResultPage = () => {
                 <AiOutlineHeart className="heart-icon" 
                 onClick={() => handleAddToPlaylist(result, result.id)} />
               )}
-              {/* <BsFillPlusCircleFill 
-                className={result.clicked ? 'plus-icon clicked' : 'plus-icon'}
-                onClick={()=>handleAddToPlaylist(result, result.id)}
-              /> */}
             </Col>
           </Row>
         ))
