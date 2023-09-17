@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { HashRouter, Routes, Route, Switch, BrowserRouter } from 'react-router-dom';
+import { HashRouter, Routes, Route, Switch, BrowserRouter, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './page/Login';
 import Home from './page/Home';
@@ -10,6 +10,7 @@ import MainLayout from './layout/MainLayout';
 import SelectGenrePage from './page/SelectGenrePage';
 import SearchResultPage from './page/SearchResultPage';
 import UserPlaylist from './page/UserPlaylist';
+import { useEffect } from 'react';
 function App() {
   return (
     <BrowserRouter>

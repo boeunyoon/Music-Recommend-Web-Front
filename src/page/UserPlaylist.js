@@ -9,8 +9,11 @@ const UserPlaylist = () => {
   const [playlist, setPlaylist] = useState([]);
   useEffect(()=>{
     fetchPlaylist()
-    console.log(playlist);
+    // console.log(playlist);
   },[])
+  // useEffect(() => {
+
+  // },[playlist]) 
   const fetchPlaylist=()=>{
     getUserplaylist().then((response)=>{
       console.log("response",response.data)
@@ -24,17 +27,15 @@ const UserPlaylist = () => {
     })
   }
 
-  const handleAddToPlaylist = useCallback((music, musicId) => {
-    const updatedPlaylist = [...playlist]; // 플레이리스트를 복제
-
-    const clickedTrack = updatedPlaylist.findIndex(item => item.id === musicId); // 제거할 곡의 인덱스를 찾음
-
-    if (clickedTrack !== -1) { // 해당 곡이 플레이리스트에 존재하면
-      updatedPlaylist.splice(clickedTrack, 1); // 해당 곡을 플레이리스트에서 제거
-    }
-
-    setPlaylist(updatedPlaylist); // 업데이트된 플레이리스트를 설정
-  }, [playlist]);
+  const handleAddToPlaylist = ((music, musicId) => {
+    AddPlaylist(music).then(() => {
+      setPlaylist(prevPlaylist => [...prevPlaylist, music]);
+      setPlaylist(playlist);
+      fetchPlaylist()
+    }).catch(error => {
+      console.error('Error adding music to playlist:', error);
+    })
+  });
   console.log("playlist",playlist)
   return (
     <MainLayout>

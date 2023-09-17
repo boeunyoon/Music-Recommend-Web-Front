@@ -82,3 +82,13 @@ export const RecommendPlaylistByPlayList =()=>{
         },
     })
 }
+//선호하는 장르, 아티스트 추천
+export const RecommendPrefer =()=>{
+    return axios({
+        method:'GET',
+        url: `${process.env.hostUrl||'http://localhost:8080'}/recommend/prefer`,
+        headers:{
+            'Authorization':'Bearer '+getToken()
+        },
+    })
+}

@@ -11,6 +11,7 @@ import { BsSearch } from "react-icons/bs";
 import { RecommendMusicByPlayList, searchMusicKeyword } from '../api/musicService'
 import RecommendByPlaylist from '../component/RecommendByPlaylist'
 import RecommendPlaylistComponent from '../component/RecommendPlaylistComponent'
+import RecommendPreferComponent from '../component/RecommendPreferComponent'
 const Home = (props) => {
   const [nickname, setNickname] = useState('')
   const navigate = useNavigate();
@@ -71,6 +72,9 @@ const Home = (props) => {
             <h2 style={{marginTop: "10px"}}>Playlist Recommend</h2>
             <hr style={{size:"10px"}}/>
             <RecommendPlaylistComponent/>
+          </Row>
+          <Row>
+            <RecommendPreferComponent/>
           </Row>
         </MainLayout>
       }

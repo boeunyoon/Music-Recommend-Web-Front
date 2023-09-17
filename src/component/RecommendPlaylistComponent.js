@@ -23,11 +23,11 @@ const RecommendPlaylistComponent = () => {
       } else if (ev.deltaY < 0) {
         apiObj.scrollPrev();
       }
-}
+  }
   useEffect(()=>{
     RecommendPlaylistByPlayList().then((response) => {
       console.log("RecommendPlaylist",response)
-      setRecommendPlaylist(response.data);
+      setRecommendPlaylist(response.data.recommand_playlists);
       setIsLoading(false)
     })
   }, [])

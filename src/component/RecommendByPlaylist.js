@@ -29,7 +29,7 @@ const RecommendByPlaylist = () => {
         RecommendMusicByPlayList().then((response) => {
             console.log("RecommendMusic",response)
             // Assume the response is an object with a "music" property containing an array of music data
-            setRecommendMusic(response.data); // Extract the array from the response object
+            setRecommendMusic(response.data.recommand_songs); // Extract the array from the response object
             setIsLoading(false);
         })
     },[])
