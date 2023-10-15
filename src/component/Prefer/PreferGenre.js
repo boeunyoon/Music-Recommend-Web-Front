@@ -32,7 +32,7 @@ const PreferGenre = (props) => {
   }
   return (
     <Row style={{marginTop:"2%"}}>
-        <h2>{GenreName}</h2>
+        <h2>선호하는 장르 - {GenreName}</h2>
         <hr/>
         <ScrollMenu
           onWheel={onWheel}

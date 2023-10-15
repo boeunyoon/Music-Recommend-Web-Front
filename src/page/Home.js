@@ -12,6 +12,8 @@ import { RecommendMusicByPlayList, searchMusicKeyword } from '../api/musicServic
 import RecommendByPlaylist from '../component/RecommendByPlaylist'
 import RecommendPlaylistComponent from '../component/RecommendPlaylistComponent'
 import RecommendPreferComponent from '../component/RecommendPreferComponent'
+import Player from '../component/Player/Player'
+import RecommendPreferArtistComponent from '../component/RecommendPreferArtistComponent'
 const Home = (props) => {
   const [nickname, setNickname] = useState('')
   const navigate = useNavigate();
@@ -64,17 +66,20 @@ const Home = (props) => {
             </InputGroup>
           </Row>
           <Row style={{marginTop:"2%"}}>
-            <h2>Track Recommend</h2>
+            <h2>추천하는 음악</h2>
             <hr style={{size:"10px", color: "white"}}/>
             <RecommendByPlaylist/>
           </Row>
           <Row>
-            <h2 style={{marginTop: "10px"}}>Playlist Recommend</h2>
+            <h2 style={{marginTop: "10px"}}>추천하는 플레이리스트</h2>
             <hr style={{size:"10px"}}/>
             <RecommendPlaylistComponent/>
           </Row>
           <Row>
             <RecommendPreferComponent/>
+          </Row>
+          <Row>
+            <RecommendPreferArtistComponent/>
           </Row>
         </MainLayout>
       }
